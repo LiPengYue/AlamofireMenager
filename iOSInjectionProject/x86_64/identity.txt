@@ -1,0 +1,2 @@
+/Users/lp1/Library/Developer/Xcode/DerivedData/RequestManager-fclwvnopazjnmkbkyzjqakjivzpj/Build/Products/Debug-iphonesimulator/RequestManager.app
+iPhone Developer

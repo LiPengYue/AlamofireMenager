@@ -1,0 +1,6 @@
+framework module Pods_RequestManager {
+  umbrella header "Pods-RequestManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
