@@ -12,7 +12,12 @@
 import UIKit
 
 ///域名 配置
-let baseURL = "http://api.dianping.com/"
+var baseServerWord: String = "api"
+var baseURL: String {
+    get {
+        return "http://\(baseServerWord).dianping.com/"
+    }
+}
 
 //MARK: - code 的处理
 

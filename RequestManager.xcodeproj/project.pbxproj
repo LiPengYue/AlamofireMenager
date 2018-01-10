@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6E1246A987499258DD73208B /* Pods_RequestManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446630E098C3C882D6AB6655 /* Pods_RequestManager.framework */; };
+		860959E02005CE91007465F0 /* PYSwitchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860959DC2005CE91007465F0 /* PYSwitchTableView.swift */; };
+		860959E12005CE91007465F0 /* PYSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860959DD2005CE91007465F0 /* PYSwitchTableViewCell.swift */; };
+		860959E22005CE91007465F0 /* PYSwitchURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860959DE2005CE91007465F0 /* PYSwitchURLManager.swift */; };
+		860959E32005CE91007465F0 /* PYSwitchURLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860959DF2005CE91007465F0 /* PYSwitchURLModel.swift */; };
+		860959E520060193007465F0 /* PYSwitchURLDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860959E420060193007465F0 /* PYSwitchURLDelegate.swift */; };
 		86311E7F1FEB88EB004D79A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311E7E1FEB88EB004D79A2 /* AppDelegate.swift */; };
 		86311E811FEB88EB004D79A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311E801FEB88EB004D79A2 /* ViewController.swift */; };
 		86311E841FEB88EB004D79A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86311E821FEB88EB004D79A2 /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 
 /* Begin PBXFileReference section */
 		446630E098C3C882D6AB6655 /* Pods_RequestManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RequestManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860959DC2005CE91007465F0 /* PYSwitchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PYSwitchTableView.swift; sourceTree = "<group>"; };
+		860959DD2005CE91007465F0 /* PYSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PYSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		860959DE2005CE91007465F0 /* PYSwitchURLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PYSwitchURLManager.swift; sourceTree = "<group>"; };
+		860959DF2005CE91007465F0 /* PYSwitchURLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PYSwitchURLModel.swift; sourceTree = "<group>"; };
+		860959E420060193007465F0 /* PYSwitchURLDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PYSwitchURLDelegate.swift; sourceTree = "<group>"; };
 		86311E7B1FEB88EB004D79A2 /* RequestManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RequestManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86311E7E1FEB88EB004D79A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86311E801FEB88EB004D79A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +81,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		860959DB2005CE91007465F0 /* PYSwitchURLManager */ = {
+			isa = PBXGroup;
+			children = (
+				860959DE2005CE91007465F0 /* PYSwitchURLManager.swift */,
+				860959DC2005CE91007465F0 /* PYSwitchTableView.swift */,
+				860959DD2005CE91007465F0 /* PYSwitchTableViewCell.swift */,
+				860959DF2005CE91007465F0 /* PYSwitchURLModel.swift */,
+				860959E420060193007465F0 /* PYSwitchURLDelegate.swift */,
+			);
+			path = PYSwitchURLManager;
+			sourceTree = "<group>";
+		};
 		86311E721FEB88EB004D79A2 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				86C6E3711FEE149300E622DE /* Model */,
+				860959DB2005CE91007465F0 /* PYSwitchURLManager */,
 				86C6E36A1FEE145E00E622DE /* AlamafireMenager */,
 				86311E7E1FEB88EB004D79A2 /* AppDelegate.swift */,
 				86311E801FEB88EB004D79A2 /* ViewController.swift */,
@@ -286,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860959E02005CE91007465F0 /* PYSwitchTableView.swift in Sources */,
 				864162252001CF3000A49AC5 /* RequestMenager.swift in Sources */,
 				864162222001CF3000A49AC5 /* AlamofireMenager.swift in Sources */,
 				864162232001CF3000A49AC5 /* AlamofireSession.swift in Sources */,
@@ -293,10 +317,14 @@
 				864162262001CF3000A49AC5 /* RespnseCodeMenager.swift in Sources */,
 				8641621A2001CF0B00A49AC5 /* AlamofireGetProperty.swift in Sources */,
 				86D5A4E91FFF9028002458B3 /* KRCodeHandler.swift in Sources */,
+				860959E12005CE91007465F0 /* PYSwitchTableViewCell.swift in Sources */,
+				860959E520060193007465F0 /* PYSwitchURLDelegate.swift in Sources */,
 				864162242001CF3000A49AC5 /* AlamofireSessionDelegate.swift in Sources */,
 				86C6E3751FEE149400E622DE /* PYViewController.swift in Sources */,
 				86D5A4F120013EFB002458B3 /* DataModel.swift in Sources */,
+				860959E22005CE91007465F0 /* PYSwitchURLManager.swift in Sources */,
 				86311E7F1FEB88EB004D79A2 /* AppDelegate.swift in Sources */,
+				860959E32005CE91007465F0 /* PYSwitchURLModel.swift in Sources */,
 				86C6E36E1FEE145E00E622DE /* AlamafireMenager_Configuration.swift in Sources */,
 				8641621B2001CF0B00A49AC5 /* AlamofireMenagerMap.swift in Sources */,
 			);

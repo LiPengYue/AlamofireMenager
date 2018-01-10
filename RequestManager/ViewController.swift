@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        switchURLManager_URLArray = ["api","demo","server"]
+        
         let alamofireMenager = AlamofireMenager.init()
         let parameters = ["appkey":"11474086",
                           "limit":"24",
@@ -41,7 +43,7 @@ class ViewController: UIViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 }
 

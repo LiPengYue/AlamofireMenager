@@ -83,10 +83,8 @@ class RequestMenager: NSObject {
 
 class KRURLMenager: NSObject {
     
-    static let baseURLString = baseURL
-    
     private class func getBaseURLStr(_ str: String) -> (String) {
-        return KRURLMenager.baseURLString + str
+        return baseURL + str
     }
     ///返回一个url 并且 cach处理
     class func getURL(_ path:String) throws -> URL {

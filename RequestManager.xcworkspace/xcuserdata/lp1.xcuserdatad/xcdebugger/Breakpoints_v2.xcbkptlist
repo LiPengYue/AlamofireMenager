@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/ObjectMapper/Sources/Operators.swift"
-            timestampString = "537095695.285527"
+            timestampString = "537265427.836341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -74,55 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RequestManager/AlamafireMenager/AlamofireMenager.swift"
-            timestampString = "537095695.287117"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "loadDataObject(Path:HTTPMethod:_:_:_:Success:Failure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RequestManager.AlamofireMenager.(loadDataObject in _72D2663827711F81AD7F5C28E1166122)&lt;A where A: ObjectMapper.BaseMappable&gt;(Path: Swift.String, HTTPMethod: Swift.Optional&lt;RequestManager.RequestMethod&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.Optional&lt;RequestManager.ParamaetersType&gt;, Swift.Optional&lt;(Alamofire.DataRequest) -&gt; ()&gt;, Success: (A, Alamofire.DataResponse&lt;A&gt;) -&gt; (), Failure: (Swift.String) -&gt; ()) -&gt; Swift.Optional&lt;Alamofire.DataRequest&gt;"
-                  moduleName = "RequestManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager.swift"
-                  timestampString = "537095695.44435"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "398">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in RequestManager.AlamofireMenager.(loadDataObject in _72D2663827711F81AD7F5C28E1166122)&lt;A where A: ObjectMapper.BaseMappable&gt;(Path: Swift.String, HTTPMethod: Swift.Optional&lt;RequestManager.RequestMethod&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.Optional&lt;RequestManager.ParamaetersType&gt;, Swift.Optional&lt;(Alamofire.DataRequest) -&gt; ()&gt;, Success: (A, Alamofire.DataResponse&lt;A&gt;) -&gt; (), Failure: (Swift.String) -&gt; ()) -&gt; Swift.Optional&lt;Alamofire.DataRequest&gt;"
-                  moduleName = "RequestManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager.swift"
-                  timestampString = "537095695.447497"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RequestManager/AlamafireMenager/AlamofireMenager.swift"
-            timestampString = "537095714.762405"
+            timestampString = "537100859.707383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
