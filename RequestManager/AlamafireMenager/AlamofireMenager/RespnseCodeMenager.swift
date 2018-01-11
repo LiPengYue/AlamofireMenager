@@ -26,7 +26,7 @@ public class RespnseCodeMenager: NSObject {
     class func handleCode (_ code: NSInteger, _ netData: Any?, _ error: Error?, _ url: URL?) -> (Bool) {
         custom_handCodeFunc(code, netData, error, url)
         if code / 100 == 2 {
-            succeed(netData,url)
+            succeed(code,netData,url)
             custom_handSucceedCodeFunc(netData, url)
             return true
         }
@@ -39,7 +39,7 @@ public class RespnseCodeMenager: NSObject {
 /// log输出
 private extension RespnseCodeMenager {
     
-    class func succeed(_ netData: Any?, _ url: URL?) {
+    class func succeed(_ code: NSInteger,_ netData: Any?, _ url: URL?) {
         if !isPrintSucceedNetWorkLog {
             return
         }
@@ -47,19 +47,25 @@ private extension RespnseCodeMenager {
         let urlTemp: Any = url ?? "url 未知"
         let dataTemp: Any = netData ?? "data 未知"
         
-        dPrint("\n\n✅✅✅请求成功\n✅\(urlTemp)\n")
+        dPrint("\n\n✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅请求成功 code: \(code)\n✅\(urlTemp)\n")
         
         if let dataArray = (dataTemp as? Array<Any>) {
-             dPrint("\netData(Array):--")
+             dPrint("etData(Array):--")
             for data in dataArray {
                 dPrint(data)
             }
         }else{
-            dPrint("\netData(Object):--")
-            dPrint(dataTemp)
+            dPrint("\n\netData(Object):--")
+            if let netDataObj = netData as? BaseMappable {
+               let netDataStr = netDataObj.toJSONString(prettyPrint: true)
+                dPrint("\n✅data：")
+                dPrint(netDataStr ?? "🌶没有数据")
+                dPrint("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n\n\n")
+            }else{
+                dPrint(dataTemp)
+                dPrint("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅\n\n\n")
+            }
         }
-        
-        dPrint("✅✅✅\n\n\n\n")
     }
     
     class func defeat(_ code: NSInteger,_ error: Error?, _ url: URL?) {
@@ -71,10 +77,10 @@ private extension RespnseCodeMenager {
         let urlTemp: Any = url ?? "url 未知"
         let errorTemp: Any = error ?? "error 未知"
         
-        dPrint("\n\n🌶🌶🌶请求失败\n\(code)\(urlTemp)\n")
+        dPrint("\n\n🌶🌶🌶🌶🌶🌶🌶🌶🌶🌶🌶🌶请求失败 code：\(code)\n\(urlTemp)\n")
         
         dPrint("\n🌶error:--")
         dPrint(errorTemp)
-        dPrint("🌶🌶🌶\n\n\n\n")
+        dPrint("🌶🌶🌶🌶🌶🌶🌶🌶🌶🌶🌶🌶\n\n\n\n")
     }
 }

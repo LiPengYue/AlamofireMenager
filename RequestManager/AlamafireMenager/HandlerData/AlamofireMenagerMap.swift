@@ -31,7 +31,7 @@ class AlamofireMenagerMap: NSObject, Mappable {
     func mapping(map: Map) {
         let propertyNames = self.getPropertyNames()
         for key in propertyNames {
-            print(key)
+            dPrint(key)
             var property = value(forKey: key)
             property <- map[key]
             setingValueCallBack?(key,property as AnyObject)

@@ -27,12 +27,6 @@ class ViewController: UIViewController {
         }) { (str) in
 
         }
-
-        alamofireMenager.loadData(Path: "", HTTPMethod: .get, nil, .query, Success: { (banner: Any) in
-
-        }) { (_) in
-
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

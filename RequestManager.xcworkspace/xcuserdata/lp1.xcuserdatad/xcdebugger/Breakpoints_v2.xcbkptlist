@@ -73,14 +73,157 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RequestManager/AlamafireMenager/AlamofireMenager.swift"
-            timestampString = "537100859.707383"
+            filePath = "RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+            timestampString = "537361384.174866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "loadDataObject(Path:HTTPMethod:_:_:_:Success:Failure:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "succeed(_:_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RequestManager.RespnseCodeMenager.(succeed in _5E53DA210E87065D214B831152A0FE3A)(Swift.Int, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+                  timestampString = "537356369.756629"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1988">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #10 : @autoclosure () -&gt; Any in static RequestManager.RespnseCodeMenager.(succeed in _5E53DA210E87065D214B831152A0FE3A)(Swift.Int, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+                  timestampString = "537356369.759407"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+            timestampString = "537361384.176698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "succeed(_:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RequestManager.RespnseCodeMenager.(succeed in _5E53DA210E87065D214B831152A0FE3A)(Swift.Int, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+                  timestampString = "537356369.76328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1748">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #7 : @autoclosure () -&gt; Any in static RequestManager.RespnseCodeMenager.(succeed in _5E53DA210E87065D214B831152A0FE3A)(Swift.Int, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+                  timestampString = "537356369.765198"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #8 : @autoclosure () throws -&gt; Swift.String in implicit closure #7 : @autoclosure () -&gt; Any in static RequestManager.RespnseCodeMenager.(succeed in _5E53DA210E87065D214B831152A0FE3A)(Swift.Int, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/AlamafireMenager/AlamofireMenager/RespnseCodeMenager.swift"
+                  timestampString = "537356369.767028"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RequestManager/ViewController.swift"
+            timestampString = "537358865.729481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RequestManager.DataModel, Alamofire.DataResponse&lt;RequestManager.DataModel&gt;) -&gt; () in RequestManager.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/ViewController.swift"
+                  timestampString = "537356369.771884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in RequestManager.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "RequestManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lp1/01%E6%88%91%E7%9A%84%E6%96%87%E4%BB%B6/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/----------%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93%E7%9A%84%E6%8A%80%E6%9C%AF%E4%BB%A3%E7%A0%81/35.alamofire%20request%20menager/RequestManager/RequestManager/ViewController.swift"
+                  timestampString = "537356369.77376"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

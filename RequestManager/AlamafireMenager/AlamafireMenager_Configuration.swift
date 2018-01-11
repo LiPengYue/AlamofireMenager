@@ -12,12 +12,24 @@
 import UIKit
 
 ///域名 配置
-var baseServerWord: String = "api"
+//let baseServerWord = "test"
+//var baseServerWord = "demo"
+
+/// release模式 是哪个环境,一定要写对，
+let baseServerWord_release = "api"
+
+///debug模式 下默认是什么环境
+var baseServerWord_debug: String = "demo"
+
 var baseURL: String {
     get {
-        return "http://\(baseServerWord).dianping.com/"
+        if !isDebug {
+            return "http://\(baseServerWord_release).dianping.com/"
+        }
+        return "http://\(baseServerWord_debug).dianping.com/"
     }
 }
+
 
 //MARK: - code 的处理
 
@@ -26,7 +38,7 @@ let isPrintSucceedNetWorkLog: Bool = true
 ///是否打印失败请求
 let isPrintErrorNetWorkLog: Bool = true
 ///是否打印请求成功后的数据
-let isPrintSucceedData: Bool = isDebug
+let isPrintSucceedData: Bool = true
 ///code处理的类 更改这里 全局配置code 的处理类
 let k_codeMenager: RespnseCodeMenager.Type = KRCodeHandler.self
 
@@ -40,40 +52,13 @@ let Alamafire_TimeoutIntervalForRequest:TimeInterval = 10
 var Alamofire_header: [String:String]? {
     get {
         return [
-            "Version": KR_Version
+//            "Cookie" : KRUserInfoManager.shared.cookieManager.clientCookie,
+            "Version": PY_Version
         ]
     }
 }
-private var versionPrivate: String?
-var KR_Version: String {
-    get {
-        if let versionPrivate_ = versionPrivate {
-            return versionPrivate_
-        }
-        versionPrivate = (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
-        return versionPrivate ?? "没有version😁"
-    }
-}
 
 
-/**
- * log 在release 版本不打印
- * 注意要在 项目的 budSeting中 查找 `Other Swift Flags`，修改debug模式的flag 为“DEBUG”
- */
-func dPrint(_ item: @autoclosure () -> Any) {
-    if isDebug {
-        print(item())
-    }
-}
 
-///是否为debug模式
-var isDebug: Bool {
-    get {
-        #if DEBUG
-            return true
-            #else
-            return false
-        #endif
-    }
-}
+
 

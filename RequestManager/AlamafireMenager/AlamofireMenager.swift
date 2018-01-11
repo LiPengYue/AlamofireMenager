@@ -40,7 +40,7 @@ class AlamofireMenager: NSObject {
     ///   - failure: 失败的回调
     /// - Returns: Request
     @discardableResult
-    func loadData<T:BaseMappable>(Path path: String, HTTPMethod method: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (_ M:T,_ response:DataResponse<T>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
+    func loadData<T:BaseMappable>(Path path: String, HTTPMethod method: RequestMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (_ M:T,_ response:DataResponse<T>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
         
         return self.loadDataObject(Path: path, HTTPMethod: method, parameters, parametersType, setRequest, Success: success, Failure: failure)
     }
@@ -57,7 +57,7 @@ class AlamofireMenager: NSObject {
     ///   - failure: 失败的回调
     /// - Returns: Request
     @discardableResult
-    func loadData(Path path: String, HTTPMethod method: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (_ json: Any,_ response: DataResponse<Any>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
+    func loadData(Path path: String, HTTPMethod method: RequestMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (_ json: Any,_ response: DataResponse<Any>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
         
         return self.loadDataJson(Path: path, HTTPMethod: method, parameters, parametersType, setRequest, Success: success, Failure: failure)
     }
@@ -74,7 +74,7 @@ class AlamofireMenager: NSObject {
     ///   - failure: 失败的回调
     /// - Returns: Request
     @discardableResult
-    func loadData<T:BaseMappable>(Path path: String, HTTPMethod method: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping ([T],_ response: DataResponse<[T]>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
+    func loadData<T:BaseMappable>(Path path: String, HTTPMethod method: RequestMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping ([T],_ response: DataResponse<[T]>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
         
         return self.loadDataArray(Path: path, HTTPMethod: method, parameters, parametersType, setRequest, Success: success, Failure: failure)
     }
@@ -133,10 +133,10 @@ private extension AlamofireMenager {
     ///   - failure: 失败的回调
     /// - Returns: Request
     @discardableResult
-    func loadDataObject<T:BaseMappable>(Path path: String, HTTPMethod method: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (T,_ response: DataResponse<T>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
+    func loadDataObject<T:BaseMappable>(Path path: String, HTTPMethod method: RequestMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (T,_ response: DataResponse<T>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
         
         let httpMethod = HTTPMethod.init(rawValue: (method?.rawValue ?? "GET"))
-        let dateRequest = RequestMenager.getDataRequest(Path: path, HTTPMethod: httpMethod, parameters, parametersType)
+        let dateRequest = RequestMenager.getLoadDataRequest(Path: path, HTTPMethod: httpMethod, parameters, parametersType)
         guard let request = dateRequest else {
             return nil
         }
@@ -147,12 +147,11 @@ private extension AlamofireMenager {
             if self == nil{
                 dPrint("🌶网络请求工具 AlamofireMenager，被销毁请检查")
             }
+//            if let cookies = netDate.response?.allHeaderFields["Set-Cookie"] as? String{
+////                KRUserInfoManager.shared.setCookie(cookies)
+//            }
             let isSuccess = k_codeMenager.handleCode(netDate.response?.statusCode ?? 0, netDate.result.value, netDate.error, netDate.request?.url)
             if isSuccess && netDate.result.value != nil {
-                if isDebug {
-                    let dataStr = netDate.result.value?.toJSONString(prettyPrint: true)
-                    dPrint(dataStr ?? "")
-                }
                 success(netDate.result.value!,netDate)
             }else{
                 failure((self?.errorShowMassage) ?? "")
@@ -173,10 +172,10 @@ private extension AlamofireMenager {
     ///   - failure: 失败的回调
     /// - Returns: Request
     @discardableResult
-    func loadDataJson(Path path: String, HTTPMethod method: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (_ json: Any, DataResponse<Any>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
+    func loadDataJson(Path path: String, HTTPMethod method: RequestMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping (_ json: Any, DataResponse<Any>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
         
         let httpMethod = HTTPMethod.init(rawValue: (method?.rawValue ?? "GET"))
-        let dateRequest = RequestMenager.getDataRequest(Path: path, HTTPMethod: httpMethod, parameters, parametersType)
+        let dateRequest = RequestMenager.getLoadDataRequest(Path: path, HTTPMethod: httpMethod, parameters, parametersType)
         guard let request = dateRequest else {
             return nil
         }
@@ -189,9 +188,6 @@ private extension AlamofireMenager {
             }
             let isSuccess = k_codeMenager.handleCode(netDate.response?.statusCode ?? 0, netDate.result.value, netDate.error, netDate.request?.url)
             if isSuccess && netDate.result.value != nil {
-                if isDebug {
-                    dPrint(netDate.result.value ?? "没有数据")
-                }
                 success(netDate.result.value!,netDate)
             }else{
                 failure((self?.errorShowMassage) ?? "")
@@ -212,10 +208,10 @@ private extension AlamofireMenager {
     ///   - failure: 失败的回调
     /// - Returns: Request
     @discardableResult
-    func loadDataArray<T:BaseMappable>(Path path: String, HTTPMethod method: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping ([T],DataResponse<[T]>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
+    func loadDataArray<T:BaseMappable>(Path path: String, HTTPMethod method: RequestMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil,_ setRequest: ((_ request: DataRequest) -> Void)? = nil,Success success: @escaping ([T],DataResponse<[T]>) -> Void, Failure failure:@escaping(_ errorMsg:String) -> Void) -> (DataRequest?) {
         
         let httpMethod = HTTPMethod.init(rawValue: (method?.rawValue ?? "GET"))
-        let dateRequest = RequestMenager.getDataRequest(Path: path, HTTPMethod: httpMethod, parameters, parametersType)
+        let dateRequest = RequestMenager.getLoadDataRequest(Path: path, HTTPMethod: httpMethod, parameters, parametersType)
         guard let request = dateRequest else {
             return nil
         }
@@ -230,10 +226,6 @@ private extension AlamofireMenager {
             let isSuccess = k_codeMenager.handleCode(netDate.response?.statusCode ?? 0, netDate.result.value, netDate.error, netDate.request?.url)
             
             if isSuccess && netDate.result.value != nil {
-                if isDebug {
-                    let dataStr = netDate.result.value?.toJSONString(prettyPrint: true)
-                    dPrint(dataStr ?? "")
-                }
                 success(netDate.result.value!,netDate)
             }else{
                 failure((self?.errorShowMassage) ?? "")
@@ -297,12 +289,13 @@ private extension AlamofireMenager {
         let headers = headers ?? ["content-type":"multipart/form-data"]
         
         ///url 拼接
-        let requstOption = RequestMenager.getURLRequest(Path: path, HTTPMethod: method, headers, ParamaetersType.query)
+        let requstOption = RequestMenager.getUploadRequest(path, method, headers: headers)
         
         guard let requst = requstOption else {
             dPrint("🌶\n 数据上传 request 转化失败 " + path + "🌶\n")
             return
         }
+        
         AlamofireSession.default.sessionMenager.upload(multipartFormData: { multipartFormData in
             for (value,key) in params {
                 multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)

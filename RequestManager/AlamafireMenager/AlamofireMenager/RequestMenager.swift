@@ -20,11 +20,6 @@ import Alamofire
  & 转义符为 %26
  = 转义符为 %3D
  */
-/// 参数拼接的类型
-enum ParamaetersType: String {
-    case body = "body"
-    case query = "query"
-}
 
 /// qury 参数
 private let query_Parameter = URLEncoding.init(destination: .queryString)
@@ -44,8 +39,8 @@ class RequestMenager: NSObject {
     ///   - parameters: 请求参数
     ///   - parametersType: 请求参数 拼接类型
     /// - Returns: DataRequest
-    class func getDataRequest(Path path: String,HTTPMethod HTTPMethod_: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil) ->(DataRequest?) {
-        let request = RequestMenager.getURLRequest(Path: path, HTTPMethod: HTTPMethod_, parameters, parametersType)
+    class func getLoadDataRequest(Path path: String,HTTPMethod HTTPMethod_: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil) ->(DataRequest?) {
+        let request = RequestMenager.getLoadDataURLRequest(Path: path, HTTPMethod: HTTPMethod_, parameters, parametersType)
         if let request = request {
 
             return AlamofireSession.default.sessionMenager.request(request)
@@ -53,10 +48,10 @@ class RequestMenager: NSObject {
         return nil
     }
    
-    class func getURLRequest(Path path: String,HTTPMethod HTTPMethod_: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil) -> (URLRequest?){
+    class private func getLoadDataURLRequest(Path path: String,HTTPMethod HTTPMethod_: HTTPMethod? = .get,_ parameters: [String:Any]? = nil,_ parametersType: ParamaetersType? = nil) -> (URLRequest?){
       
         do{
-            let url = try KRURLMenager.getURL(path)
+            let url = try AlamofireURLMenager.getURL(path)
             var requst = URLRequest.init(url: url)
             requst.httpMethod = (HTTPMethod_ ?? .get).rawValue
             
@@ -79,18 +74,24 @@ class RequestMenager: NSObject {
             return nil
         }
     }
+    
+    //MARK: - upload Request
+    class func getUploadRequest(_ path : String,_ method: HTTPMethod,headers: HTTPHeaders? = nil) -> (URLRequest?){
+        do {
+            let url = try AlamofireURLMenager.getURL(path)
+            var requst = try URLRequest(url: url, method: method, headers: headers)
+            ///传入 一些全局header
+            if let headers = Alamofire_header {
+                for (value,key) in headers {
+                    requst.setValue(value, forHTTPHeaderField: key)
+                }
+            }
+            return requst
+        }catch{
+            dPrint("🌶\n 数据上传 request 转化失败 " + path + "🌶\n")
+            return nil
+        }
+    }
 }
 
-class KRURLMenager: NSObject {
-    
-    private class func getBaseURLStr(_ str: String) -> (String) {
-        return baseURL + str
-    }
-    ///返回一个url 并且 cach处理
-    class func getURL(_ path:String) throws -> URL {
-        var urlStr = KRURLMenager.getBaseURLStr(path)
-        urlStr = urlStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? ""
-        guard let URL = URL(string: urlStr) else { throw AFError.invalidURL(url: urlStr) }
-        return URL
-    }
-}
+

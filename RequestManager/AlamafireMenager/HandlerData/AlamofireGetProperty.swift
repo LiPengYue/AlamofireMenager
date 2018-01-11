@@ -22,7 +22,7 @@ extension NSObject {
         
         let count:Int = Int(outCount);
         
-        print("共有\(outCount)个")
+        dPrint("共有\(outCount)个")
         var propertyArray = [String]()
         for i in 0...(count-1) {
             

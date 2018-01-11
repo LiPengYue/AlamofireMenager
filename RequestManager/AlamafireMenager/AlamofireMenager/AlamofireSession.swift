@@ -10,7 +10,31 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
+///请求方式
+enum RequestMethod: String {
+    case options = "OPTIONS"
+    case get = "GET"
+    case head = "HEAD"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
+    case trace = "TRACE"
+    case connect = "CONNECT"
+}
 
+/// 参数拼接的类型
+enum ParamaetersType: String {
+    case body = "body"
+    case query = "query"
+}
+
+/// 请求 数据类型
+enum ResponseDateType: String {
+    case array = "array"
+    case object = "Object"
+    case json = "json"
+}
 
 class AlamofireSession: NSObject {
     static let `default`: AlamofireSession = AlamofireSession()
